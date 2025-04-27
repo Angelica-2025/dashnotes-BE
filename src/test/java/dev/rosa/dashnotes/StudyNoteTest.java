@@ -9,14 +9,14 @@ import static org.hamcrest.Matchers.*;
 public class StudyNoteTest {
 
     @Test
-    @DisplayName("Should create a StudyNote conrrectly"
-    public void studyNoteCreated(){
-        
-       StudyNote studyNote = new StudyNote ("CSS", "JAVA", "/files/git-rebase.pdf");
+    @DisplayName("Should create a StudyNote correctly")
+    public void studyNoteCreated() {
+
+        StudyNote studyNote = new StudyNote("CSS", "JAVA", "/files/git-rebase.pdf");
+
         assertThat(studyNote.getTitle(), is("CSS"));
         assertThat(studyNote.getDescription(), is("JAVA"));
         assertThat(studyNote.getFilePath(), is("/files/git-rebase.pdf"));
         assertThat(studyNote.getCreatedAt(), is(notNullValue()));
     }
-
 }
