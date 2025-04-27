@@ -1,0 +1,13 @@
+# Ignore the target folder (compiled files)
+target/
+
+# Ignore IDE settings (if any)
+.vscode/
+
+# Ignore temporary files
+*.log
+*.tmp
+
+# Ignore OS files
+.DS_Store
+Thumbs.db
