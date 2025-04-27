@@ -1,7 +1,9 @@
 package dev.rosa.dashnotes;
 
-import java.time.LocalDateTime;
-import jakarta.persistence.*;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 
 @Entity
 public class StudyNote {
@@ -11,25 +13,24 @@ public class StudyNote {
     private Long id;
 
     private String title;
-    private String description;
-    private String filePath;
-    private LocalDateTime createdAt;
+    private String content;
 
-    // Constructor con parámetros
-    public StudyNote(String title, String description, String filePath) {
-        this.title = title;
-        this.description = description;
-        this.filePath = filePath;
-        this.createdAt = LocalDateTime.now();
+    // Constructores
+    public StudyNote() {
     }
 
-    // Constructor vacío (necesario para JPA)
-    public StudyNote() {
+    public StudyNote(String title, String content) {
+        this.title = title;
+        this.content = content;
     }
 
     // Getters y Setters
     public Long getId() {
         return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getTitle() {
@@ -40,27 +41,11 @@ public class StudyNote {
         this.title = title;
     }
 
-    public String getDescription() {
-        return description;
+    public String getContent() {
+        return content;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public String getFilePath() {
-        return filePath;
-    }
-
-    public void setFilePath(String filePath) {
-        this.filePath = filePath;
-    }
-
-    public LocalDateTime getCreatedAt() {
-        return createdAt;
-    }
-
-    public void setCreatedAt(LocalDateTime createdAt) {
-        this.createdAt = createdAt;
+    public void setContent(String content) {
+        this.content = content;
     }
 }

@@ -1,9 +1,9 @@
 package dev.rosa.dashnotes;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.Matchers.*;
 
 @DisplayName("Test for StudyNote entity")
 public class StudyNoteTest {
@@ -11,12 +11,9 @@ public class StudyNoteTest {
     @Test
     @DisplayName("Should create a StudyNote correctly")
     public void studyNoteCreated() {
+        StudyNote studyNote = new StudyNote("Título de prueba", "Contenido de prueba");
 
-        StudyNote studyNote = new StudyNote("CSS", "JAVA", "/files/git-rebase.pdf");
-
-        assertThat(studyNote.getTitle(), is("CSS"));
-        assertThat(studyNote.getDescription(), is("JAVA"));
-        assertThat(studyNote.getFilePath(), is("/files/git-rebase.pdf"));
-        assertThat(studyNote.getCreatedAt(), is(notNullValue()));
+        assertEquals("Título de prueba", studyNote.getTitle());
+        assertEquals("Contenido de prueba", studyNote.getContent());
     }
 }
