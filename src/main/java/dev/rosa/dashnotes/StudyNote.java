@@ -15,7 +15,6 @@ public class StudyNote {
     private String title;
     private String content;
 
-    // Constructores
     public StudyNote() {
     }
 
@@ -24,7 +23,6 @@ public class StudyNote {
         this.content = content;
     }
 
-    // Getters y Setters
     public Long getId() {
         return id;
     }
