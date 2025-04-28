@@ -10,3 +10,4 @@ public class DashnotesApplication {
         SpringApplication.run(DashnotesApplication.class, args);
     }
 }
+
